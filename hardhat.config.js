@@ -1,5 +1,6 @@
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-etherscan");
+require("hardhat-gas-reporter");
 const { resolve } = require("path");
 
 require('dotenv').config({ path: resolve(__dirname, "./.env") });
@@ -16,6 +17,9 @@ const { ALCHEMY_TESTNET_API_KEY, TESTNET_PRIVATE_KEY, ETHERSCAN_API_KEY, MAINNET
  * @type import('hardhat/config').HardhatUserConfig
  */
 module.exports = {
+  gasReporter: {
+    currency: 'USD',
+  },
   solidity: "0.8.0",
   networks: {
     ropsten: {
